@@ -1,4 +1,4 @@
-import { Actor, Engine, Vector } from "excalibur"
+import { Actor, Keys, Vector, CollisionType } from "excalibur"
 import { Resources } from './resources'
 
 export class Chicken extends Actor {
@@ -10,10 +10,9 @@ export class Chicken extends Actor {
     onInitialize(engine) {
         this.graphics.use(Resources.Bird.toSprite())
     }
-    onPreUpdate(engine, delta) {
-        if (engine.input.keyboard.wasPressed(Keys.Space)) {
+    onPreUpdate(engine) {
+        if (engine.input.keyboard.wasPressed(Keys.Space) && !this.launched) {
             Resources.ChickenOne.play() 
-            console.log("player pressed space")
         }
     }
 }

@@ -1,4 +1,4 @@
-import { Actor, Engine, Vector } from "excalibur"
+import { Actor, Engine, Vector, CollisionType } from "excalibur"
 import { Resources } from './resources'
 import { Chicken } from './chicken'
 

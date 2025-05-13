@@ -1,4 +1,4 @@
-import { Actor, Vector } from "excalibur"
+import { Actor, Vector, CollisionType } from "excalibur"
 import { Resources } from './resources.js'
 
 export class Floor extends Actor {
