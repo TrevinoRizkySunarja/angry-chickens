@@ -19,11 +19,16 @@
 - De grond wordt een fixed collider
 - Geef ook een friction aan de floor (een getal tussen 0 en 1)
 - Vuur de chicken af met een LinearImpulse!
+- De kip kan maar één keer gelanceerd worden
+
+<br><br>
 
 # Expert level
 
 - Plaats vijanden in het level die je moet raken
 - Maak onderscheid tussen rotsblokken, planken en fixed platforms in het level
+
+<br><br>
 
 # Code snippets
 
