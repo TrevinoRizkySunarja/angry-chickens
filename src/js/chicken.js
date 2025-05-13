@@ -9,10 +9,10 @@ export class Chicken extends Actor {
     }
     onInitialize(engine) {
         this.graphics.use(Resources.Bird.toSprite())
-        // Resources.ChickenOne.play() 
     }
     onPreUpdate(engine, delta) {
         if (engine.input.keyboard.wasPressed(Keys.Space)) {
+            Resources.ChickenOne.play() 
             console.log("player pressed space")
         }
     }
