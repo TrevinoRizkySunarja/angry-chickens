@@ -3,10 +3,9 @@ import { Resources } from './resources.js'
 
 export class Floor extends Actor {
     constructor() {
-        super()
+        super({ width: Resources.Floor.width, height: Resources.Floor.height })
         this.graphics.use(Resources.Floor.toSprite())
-        this.pos = new Vector(0, 430)
-        this.anchor = new Vector(0, 0)
-
+        this.pos = new Vector(500, 512)
+        this.body.collisionType = CollisionType.Fixed
     }
 }
