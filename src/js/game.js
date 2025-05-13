@@ -1,22 +1,36 @@
 import '../css/style.css'
-import { Actor, Engine, DisplayMode } from "excalibur"
+import { Actor, Engine, DisplayMode, SolverStrategy, Vector } from "excalibur"
 import { Resources, ResourceLoader } from './resources.js'
 import { Tree } from './tree'
 import { Chicken } from './chicken'
 import { Background } from './background.js'
+import { Floor } from './floor.js'
 
 export class Game extends Engine {
 
     constructor() {
-        super({ width: 800, height: 600, maxFps: 60, displayMode: DisplayMode.FitScreen })
+        super({ 
+            width: 1000, 
+            height: 600, 
+            maxFps: 60, 
+            displayMode: DisplayMode.FitScreen,
+            physics: {
+                solver: SolverStrategy.Arcade,
+                gravity: new Vector(0, 800),
+            }
+         })
         this.start(ResourceLoader).then(() => this.startGame())
     }
 
     startGame() {
-        const bg = new Background()
-        this.add(bg)
+        this.add(new Background())
 
-        Resources.ThemeSong.play(0.4)
+        this.add(new Floor())
+
+        this.add(new Tree(650, 234, 0))
+        this.add(new Tree(650, 340, 90))
+
+        this.add(new Chicken())
     }
 }
 

@@ -3,16 +3,12 @@ import { Resources } from './resources'
 import { Chicken } from './chicken'
 
 export class Tree extends Actor {
-    constructor(x, y) {
+    constructor(x, y, degrees) {
         super({x,y,width:Resources.Tree.width, height:Resources.Tree.height})
-    }
-    onInitialize(engine) {
         this.graphics.use(Resources.Tree.toSprite())
-        this.vel = new Vector(Math.random()*80-120, 0)
-        this.on('exitviewport', () => this.resetPosition())
+
+        const radians = (degrees * Math.PI) / 180;
+        this.rotation = radians
     }
 
-    resetPosition() {
-        this.pos.x = 1020
-    }
 }
