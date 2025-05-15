@@ -1,5 +1,7 @@
 # Angry Chickens
 
+![chick](./public/images/preview.png)
+
 # install
 - Klik "use this template" als je de oefening in je eigen github wil hebben
 - clone de repo
