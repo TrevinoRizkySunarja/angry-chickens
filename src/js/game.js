@@ -19,6 +19,7 @@ export class Game extends Engine {
                 gravity: new Vector(0, 800),
             }
          })
+         console.log("hallo dit is mijn game")
          this.showDebug(true)
         this.start(ResourceLoader).then(() => this.startGame())
     }
